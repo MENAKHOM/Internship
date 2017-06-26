@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
 import { flatten, times, range } from 'lodash';
 import { StickyContainer, Sticky } from 'react-sticky';
+import Button from 'react-button';
 import logo from './logo.svg';
 import './App.css';
 import Header from './Header'
@@ -80,6 +81,16 @@ class App extends Component {
                 </Col>
                 <Col lg={4}>{kitties}</Col>
               </Row>
+              <Col lg={6}>
+                  <h1 style={{color: 'red'}}>Input</h1>
+                  <textarea onChange={this.onChange.bind(this)} />
+                  <Button style={{background: 'magenta', fontWeight: 'bold'}} activeStyle={{background: 'red'}}
+                  onClick={this.changeMessage}>{this.state.message}</Button>
+                </Col>
+              <Col lg={1}>
+                  <h1 style={{color: 'purple'}}>Output</h1>
+                  <h2 style={{color: 'blue'}}>{this.state.type}</h2>
+                </Col>
             </Grid>
           </div>
           
